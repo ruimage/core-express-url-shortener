@@ -4,7 +4,7 @@ const logger = require('morgan');
 const app = express();
 const PORT = 3000;
 
-// Тут должно быть проверка подключения к БД.
+// Тут должна быть проверка подключения к БД.
 
 app.set('view engine', 'hbs');
 
