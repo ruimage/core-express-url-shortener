@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   // Отображает список коротких URL
-  const main = React.createElement(Main, req.query);
+  const main = React.createElement(Main, { title: 'Url shortener' });
   const html = ReactDOMServer.renderToStaticMarkup(main);
   res.write('<!DOCTYPE html>');
   res.end(html);

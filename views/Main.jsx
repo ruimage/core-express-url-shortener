@@ -7,9 +7,7 @@ module.exports = function Main({ title }) {
       <div className="container">
         <h1>{ title }</h1>
         <p>
-          Welcome to
-          {' '}
-          { title }
+          Welcome to {title}
         </p>
       </div>
 
