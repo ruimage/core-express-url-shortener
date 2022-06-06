@@ -5,6 +5,7 @@ const logger = require('morgan');
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 const Main = require('./views/Main');
+const ShortenURL = require('./views/ShortenURL');
 
 const app = express();
 const PORT = 3000;
@@ -25,6 +26,13 @@ app.get('/', (req, res) => {
 });
 
 app.post('/urls', (req, res) => {
+  const main = React.createElement(Main, { title: 'Url shortener' });
+  const html = ReactDOMServer.renderToStaticMarkup(main);
+  const shurtenUrl = React.createElement(ShortenURL, req.body);
+  const htmlShortenUrl = ReactDOMServer.renderToStaticMarkup(shurtenUrl);
+  res.write('<!DOCTYPE html>');
+  res.write(html);
+  res.end(htmlShortenUrl);
   // Создать новый объект 'Url'
   // Автоматически создаются короткие  URL
   // В конце надо вернуться обратно на домашнюю страницу

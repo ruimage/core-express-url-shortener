@@ -5,9 +5,12 @@ module.exports = function Main({ title }) {
   return (
     <Layout title={title}>
       <div className="container">
-        <h1>{ title }</h1>
+        <h1>{title}</h1>
         <p>
-          Welcome to {title}
+          <form action="/urls" method="POST">
+            <input name="inputURL" />
+            <button type="submit">Сократить ссылку</button>
+          </form>
         </p>
       </div>
 
